@@ -26,7 +26,27 @@ from . import _C
 from .viterbi import decode
 from .core import *
 from .chunk import chunk
-from . import data
-from . import evaluate
-from . import partition
-from . import reference
+# Optional imports - these modules have optional dependencies
+try:
+    from . import data
+except ImportError as e:
+    import warnings
+    warnings.warn(f"torbi.data module not available: {e}")
+
+try:
+    from . import evaluate
+except ImportError as e:
+    import warnings
+    warnings.warn(f"torbi.evaluate module not available: {e}")
+
+try:
+    from . import partition
+except ImportError as e:
+    import warnings
+    warnings.warn(f"torbi.partition module not available: {e}")
+
+try:
+    from . import reference
+except ImportError as e:
+    import warnings
+    warnings.warn(f"torbi.reference module not available: {e}")
