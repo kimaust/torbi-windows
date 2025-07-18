@@ -39,7 +39,8 @@ def get_extensions():
         cxx_args = ['/O2', '/openmp']
         cxx_args = [
             "/O2" if not debug_mode else "/Od",
-            ['/O2', '/openmp']
+            # ['/O2', '/openmp']
+            "/openmp"
             # "-DPy_LIMITED_API=0x03090000",  # min CPython version 3.9
         ]
         if debug_mode:

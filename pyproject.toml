@@ -40,3 +40,6 @@ evaluate = [
 
 [tool.setuptools.package-data]
 torbi = ["assets/*", "assets/*/*"]
+
+[tool.setuptools.packages.find]
+include = ["torbi", "torbi.*"]
